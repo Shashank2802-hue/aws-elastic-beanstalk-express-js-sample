@@ -52,4 +52,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            archiveArtifacts artifacts: 'package.json, package-lock.json', fingerprint: true
+        }
+    }
+}
 }
