@@ -7,8 +7,11 @@ pipeline {
 }
 
     environment {
-        DOCKER_IMAGE = 'shashankshrestha/isec6001-assessment2'
-    }
+    DOCKER_IMAGE = 'shashankshrestha/isec6001-assessment2'
+    DOCKER_HOST = 'tcp://docker:2376'
+    DOCKER_TLS_VERIFY = '1'
+    DOCKER_CERT_PATH = '/certs/client'
+}
 
     stages {
         stage('Install Dependencies') {
