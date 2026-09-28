@@ -1,9 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:16'
-        }
+   agent {
+    docker {
+        image 'node:16'
+        args '-u root'
     }
+}
 
     environment {
         DOCKER_IMAGE = 'shashankshrestha/isec6001-assessment2'
