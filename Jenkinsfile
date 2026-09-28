@@ -1,11 +1,10 @@
 pipeline {
-    agent {
-        docker {
-            image 'node16-docker'
-            args '-u root'
-        }
+agent {
+    docker {
+        image 'node16-docker'
+        args '-u root -e DOCKER_HOST=tcp://docker:2376 -e DOCKER_TLS_VERIFY=1 -e DOCKER_CERT_PATH=/certs/client'
     }
-
+}
     environment {
         DOCKER_IMAGE = 'shashankshrestha/isec6001-assessment2'
         DOCKER_HOST = 'tcp://docker:2376'
